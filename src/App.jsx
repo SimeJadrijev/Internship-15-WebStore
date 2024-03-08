@@ -1,23 +1,29 @@
 import "./App.css";
 import Products from "./pages/Products";
 import ProductCard from "./components/ProductCard";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ProductCardsContainer from "./components/ProductCardsContainer";
 
 function App() {
   const [products, setProducts] = useState(null);
+
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error("Error fetching products:", error));
+    const FetchProducts = async () => {
+      try {
+        const response = await fetch("https://fakestoreapi.com/products");
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Greška:", error);
+      }
+    };
+
+    FetchProducts();
   }, []);
 
   return (
     <>
-      <Products />
-      <ProductCardsContainer products={products} />
+      <Products products={products} />
     </>
   );
 }
