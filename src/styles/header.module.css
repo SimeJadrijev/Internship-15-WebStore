@@ -10,6 +10,7 @@ header{
 
 #header-image{
     height: 100px;
+    cursor: pointer;
 }
 
 header input{
