@@ -1,6 +1,6 @@
 import classes from "./../styles/header.module.css";
 
-const Header = () => {
+const Header = ({ onSearchChange }) => {
   return (
     <>
       <header>
@@ -9,7 +9,7 @@ const Header = () => {
           src="./src/assets/images/njuskalo header image.jpeg"
           alt="njuskalo header image"
         />
-        <input type="text" />
+        <input type="text" onChange={onSearchChange} />
         <button>Traži</button>
       </header>
     </>
