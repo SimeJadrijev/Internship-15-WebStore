@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header";
 
 const Product = ({ onSearchChange }) => {
-  const { id } = useParams(); // Dobijanje id-a proizvoda iz rute
+  const { id } = useParams();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Product = ({ onSearchChange }) => {
       }
     };
     fetchProduct();
-  }, [id]); // Dodavanje id-a u niz zavisnosti
+  }, [id]);
 
   return (
     <>

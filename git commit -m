@@ -1,0 +1,22 @@
+Revert "Imported react-router-dom and implemented searching feature using searchParams"
+
+This reverts commit 779f7ec1c1aaba56551ec70c95d33eb23da2cb1b.
+
+# Conflicts:
+#	src/main.jsx
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is ahead of 'origin/main' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# You are currently reverting commit 779f7ec.
+#
+# Changes to be committed:
+#	modified:   package-lock.json
+#	modified:   package.json
+#	modified:   src/main.jsx
+#	modified:   src/pages/Products.jsx
+#
