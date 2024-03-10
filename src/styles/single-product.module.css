@@ -1,0 +1,28 @@
+.single-product{
+    display: flex;
+    border-radius: 10px;
+    padding: 30px;
+    gap: 50px;
+    width: 70%;
+    font-family: "Fuse";
+    align-items: center;
+    justify-content: space-between;
+    background-color:#eeeeee ;
+}
+.single-product img{
+    height: 200px;
+}
+
+.single-product-right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+} 
+
+.single-product-right p, h2, h3{
+    font-weight: 900;
+}
+.single-product-right p span, h2 span, h3 span{
+    font-weight: 100;
+}
+
