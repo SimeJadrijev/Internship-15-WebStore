@@ -4,6 +4,8 @@ import ProductCard from "./components/ProductCard";
 import SingleProduct from "./components/SingleProduct";
 import React, { useState, useEffect } from "react";
 import ProductCardsContainer from "./components/ProductCardsContainer";
+import { Routes, Route } from "react-router-dom";
+import Product from "./pages/Product";
 
 function App() {
   // const [product, setProduct] = useState(null);
@@ -39,8 +41,12 @@ function App() {
 
   return (
     <>
-      <Products products={products} />
       {/* {product ? <SingleProduct product={product} /> : <p>Loading...</p>} */}
+
+      <Routes>
+        <Route path="/" element={<Products products={products} />} />
+        <Route path="/product/:id" element={<Product />} />
+      </Routes>
     </>
   );
 }
