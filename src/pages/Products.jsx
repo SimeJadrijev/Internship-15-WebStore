@@ -1,23 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Header from "../components/Header";
 import ProductCardsContainer from "../components/ProductCardsContainer";
-import { useNavigate, useLocation } from "react-router-dom";
 
 const Products = ({ products }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const searchTermFromQuery = searchParams.get("search") || "";
-
-  const [searchTerm, setSearchTerm] = useState(searchTermFromQuery);
-
-  useEffect(() => {
-    searchParams.set("search", searchTerm);
-    navigate(`?${searchParams.toString()}`);
-  }, [searchTerm, navigate, searchParams]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchChange = (e) => setSearchTerm(e.target.value);
-
   const filteredProducts = products
     ? products.filter((product) =>
         product.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -27,7 +15,11 @@ const Products = ({ products }) => {
   return (
     <>
       <Header onSearchChange={handleSearchChange} />
-      <ProductCardsContainer products={filteredProducts} />
+      {filteredProducts.length > 0 ? (
+        <ProductCardsContainer products={filteredProducts} />
+      ) : (
+        <p>Loading...</p>
+      )}
     </>
   );
 };
