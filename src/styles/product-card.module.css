@@ -47,3 +47,10 @@
     justify-content: center;
     margin-top: 50px;
 }
+
+.product-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+  
+
