@@ -3,10 +3,28 @@ import SingleProduct from "../components/SingleProduct";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import { assertNewExpression } from "@babel/types";
+import { useNavigate } from "react-router-dom";
 
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [searchTermValue, setSearchTermValue] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSearchChange = (e) => {
+    setSearchTermValue(e.target.value);
+  };
+
+  const handleClick = () => {
+    navigate(`/`, {
+      state: { search: searchTermValue },
+    });
+
+    setSearchTermValue("");
+  };
+
+  console.log(searchTermValue);
 
   useEffect(() => {
     const FetchProduct = async () => {
@@ -23,7 +41,7 @@ const Product = () => {
 
   return (
     <>
-      {/* <Header onSearchChange={handleSearchChange} /> */}
+      <Header onSearchChange={handleSearchChange} handleClick={handleClick} />
       {product ? <SingleProduct product={product} /> : <p>Loading...</p>}
     </>
   );
