@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import { assertNewExpression } from "@babel/types";
 import { useNavigate } from "react-router-dom";
+import RelevantProducts from "../components/RelevantProducts";
 
 const Product = () => {
   const { id } = useParams();
@@ -41,6 +42,7 @@ const Product = () => {
     <>
       <Header onSearchChange={handleSearchChange} handleClick={handleClick} />
       {product ? <SingleProduct product={product} /> : <p>Loading...</p>}
+      <RelevantProducts />
     </>
   );
 };

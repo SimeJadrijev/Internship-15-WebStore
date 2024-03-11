@@ -26,4 +26,10 @@
 .single-product-right p span, h2 span, h3 span{
     font-weight: 100;
 }
+#relevant-products-title{
+    font-family: "Fuse";
+    margin-bottom: -30px;
+    margin-top: 50px;
+}
+
 
