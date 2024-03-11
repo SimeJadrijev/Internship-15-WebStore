@@ -10,7 +10,6 @@ const Products = ({ products }) => {
   const { state } = useLocation();
 
   const handleSearchChange = (e) => {
-    state.search = "";
     setSearchTerm(e.target.value);
   };
   const handleClick = () => {

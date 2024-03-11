@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 import ProductCardsContainer from "./components/ProductCardsContainer";
 import { Routes, Route } from "react-router-dom";
 import Product from "./pages/Product";
+import NotFoundPage from "./pages/NotFoundPage";
 import RelevantProducts from "./components/RelevantProducts";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Products products={products} />} />
         <Route path="/product/:id" element={<Product />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );
