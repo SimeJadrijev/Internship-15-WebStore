@@ -24,8 +24,6 @@ const Product = () => {
     setSearchTermValue("");
   };
 
-  console.log(searchTermValue);
-
   useEffect(() => {
     const FetchProduct = async () => {
       try {

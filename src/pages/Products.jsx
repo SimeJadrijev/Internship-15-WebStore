@@ -9,7 +9,10 @@ const Products = ({ products }) => {
 
   const { state } = useLocation();
 
-  const handleSearchChange = (e) => setSearchTerm(e.target.value);
+  const handleSearchChange = (e) => {
+    state.search = "";
+    setSearchTerm(e.target.value);
+  };
   const handleClick = () => {
     navigate(`/?search=${searchTerm}`);
   };
